@@ -12,14 +12,18 @@ describe("Find element by accessibility id,Class Name", () => {
     await callBtn.click();
   });
 
+   it("Find element by Class Name", async () => {
+     const classNamellBtn = await $("android.widget.EditText");
+     await classNamellBtn.click();
+     await classNamellBtn.setValue("Anna");
+   });
+
   it("Find element by Text", async () => {
     const textFind = "Save";
     const elementByText = await $(`//*[contains(@text, "${textFind}")]`);
     await elementByText.click();
+    await browser.pause(3000);
   });
 
-  it("Find element by Class Name", async () => {
-    const classNamellBtn = await $("android.widget.EditText");
-    await classNamellBtn.click();
-  });
+ 
 });
